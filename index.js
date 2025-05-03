@@ -18,6 +18,7 @@ app.post('/daisysms', async (req, res) => {
     const embed = {
         title: '📩 New SMS Received',
         fields: [
+            { name: 'Activation ID', value: String(data.activationId), inline: true },
             { name: 'Service', value: data.service || 'Unknown', inline: true },
             { name: 'Code', value: data.code, inline: true },
             { name: 'Text', value: data.text },
